@@ -1,32 +1,27 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
   IonItem,
   IonInput,
   IonButton,
 } from '@ionic/angular';
 
+import { EncabezadoComponent } from '../encabezado/encabezado.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonItem,
-    IonInput,
-    IonButton,
-    FormsModule, // habilita [(ngModel)]
-    RouterLink, // habilita routerLink
+    IonContent, IonItem, IonInput, IonButton,
+    FormsModule, RouterLink,
+    EncabezadoComponent, RouterOutlet        // <- el componente nuevo
+    // IonHeader, IonToolbar, IonTitle ya NO van:
+    // el header ahora lo pone el encabezado
   ],
+
 })
 export class HomePage {
   nombre = ''; // se conecta con el input
