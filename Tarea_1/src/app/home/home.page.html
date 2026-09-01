@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Tarea 1 - Saludador - Vicente Rodríguez</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input
+      label="Tu nombre"
+      labelPlacement="floating"
+      placeholder="Escribe tu nombre"
+      [(ngModel)]="nombre"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Tu ciudad"
+      labelPlacement="floating"
+      placeholder="Escribe tu ciudad"
+      [(ngModel)]="ciudad"
+    ></ion-input>
+  </ion-item>
+
+
+<ion-button expand="block" [disabled]="!nombre.trim() || !ciudad.trim()" (click)="saludarYSalir()">Saludar</ion-button>
+
+  @if (saludo) {
+    <h1 class="ion-text-center">{{ saludo }}</h1>
+      <!-- Paso 2: navega hacia adelante, a la ruta /acerca -->
+    <ion-button [routerLink]="['/acerca']">Acerca de</ion-button>
+  }
+
+
+</ion-content>
